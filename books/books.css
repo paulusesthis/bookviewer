@@ -4,6 +4,18 @@
     box-sizing: border-box;
 }
 
+html, body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 header {
     background-color: oklch(20.761% 0.05429 3.608);
     color: white;
@@ -16,6 +28,10 @@ header {
 
 h2 {
     padding: 10px 15px;
+}
+
+#top {
+    scroll-margin-top: 100px;
 }
 
 p {
@@ -112,18 +128,6 @@ footer {
     margin-top: auto;
 }
 
-html, body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
 @media (min-width: 992px) {
     .container {
         max-width: 960px;
@@ -135,3 +139,4 @@ body {
         max-width: 1140px;
     }
 }
+
