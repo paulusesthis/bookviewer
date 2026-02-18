@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: oklch(20.761% 0.05429 3.608);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: clamp(24px, 5vw, 30px); /* Responsive font size */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+.books {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px; 
+    max-width: 1400px;
+    margin: 0 auto; 
+}
+
+.book {
+    background-color: white;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+.book:hover {
+    transform: translateY(-5px);
+}
+
+.book img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2/3; 
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.book a {
+    display: block; 
+    margin-top: 15px;
+    padding: 12px 15px;
+    background-color: oklch(20.761% 0.05429 3.608);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book a:hover {
+    background-color: oklch(56.408% 0.20594 7.25);
+}
+
+@media screen and (max-width: 768px) {
+    .books {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .book {
+        padding: 12px;
+    }
+
+    .book a {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 15px 0;
+        font-size: 22px;
+    }
+
+    .books {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .book {
+        padding: 8px;
+        border-width: 1px; /
+    }
+
+    .book img {
+        aspect-ratio: 2/3;
+    }
+
+    .book a {
+        padding: 8px 10px;
+        margin-top: 10px;
+        font-size: 13px;
+        min-height: 40px; 
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .books {
+        grid-template-columns: 1fr; 
+    }
+
+    .book {
+        max-width: 250px;
+        margin: 0 auto; 
+    }
+}
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .books {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    .book img {
+        aspect-ratio: 2/3;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .books {
+        grid-template-columns: repeat(5, 1fr); 
+    }
+}
